@@ -1,4 +1,4 @@
-package Math;
+package Math.Objects;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -12,11 +12,6 @@ public class Matrix {
         this.rows = rows;
         this.columns = cols;
         body = new double[rows][cols];
-        for (int i = 0; i < columns; i++) {
-            for (int j = 0; j < rows; j++) {
-                body[i][j]=0;
-            }
-        }
     }
 
     public Matrix(double[][] body) {
@@ -62,7 +57,7 @@ public class Matrix {
         return temp;
     }
 
-    public List<Double> getAsList() {
+    public List<Double> toList() {
         var tempList = new ArrayList<Double>();
         for (int i = 0; i < columns; i++) {
             for (int j = 0; j < rows; j++) {
