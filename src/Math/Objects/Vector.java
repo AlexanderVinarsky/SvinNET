@@ -5,15 +5,19 @@ import java.util.List;
 import java.util.Random;
 
 public class Vector {
-    private int size;
-    private double[] body;
+    private Integer size;
+    private Double[] body;
 
-    public Vector(double[] body) {
+    public Vector(Double[] body) {
         this.size = body.length;
         this.body = body;
     }
 
-    public int getSize() {
+    public Double[] getBody() {
+        return body;
+    }
+
+    public Integer getSize() {
         return size;
     }
 
@@ -80,22 +84,35 @@ public class Vector {
         return tempList;
     }
 
-    /*public Matrix toMatrix(int x, int y, int) {
-        var matrix = new Matrix(1, vector.size);
-
-        for (int i = 0; i < vector.size; i++) {
-            matrix.body[0][i] = vector.body[i];
-        }
+    public Matrix toMatrix(Integer rows, Integer cols, Integer pos) {
+        var matrix = new Matrix(rows,cols);
+        for (var i = 0; i < rows; i++)
+            for (var j = 0; j < cols; j++) {
+                if (size <= pos) return null;
+                matrix.body[i][j] = body[pos++];
+            }
         return matrix;
     }
 
-    public Tensor toTensor(int x, int y, int channels) {
-        var tensor = new Tensor(new List<Matrix>);
-        var position = 0;
+    public Matrix toMatrix(Integer rows, Integer cols) {
+        int pos = 0;
+        var matrix = new Matrix(rows,cols);
+        for (var i = 0; i < rows; i++)
+            for (var j = 0; j < cols; j++) {
+                if (size <= pos) return null;
+                matrix.body[i][j] = body[pos++];
+            }
+        return matrix;
+    }
 
+    public Tensor toTensor(Integer rows, Integer cols, Integer channels) {
+        List<Matrix> matrixList = new ArrayList<>();
+        Tensor tensor = new Tensor(matrixList);
+        if (channels*rows*cols > size) {
+            return null;
+        }
         for (var k = 0; k < channels; k++)
-            tensor.channels.add(toMatrix(x,y,position));
-
+            tensor.channels.add(toMatrix(rows,cols,k*rows*cols));
         return tensor;
-    }*/
+    }
 }

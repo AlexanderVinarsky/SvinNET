@@ -2,19 +2,20 @@ package Network.Layers.Perceptron;
 
 import Math.Objects.Matrix;
 import Math.Objects.Tensor;
+import Math.Objects.Vector;
 import Network.Initialization.IWeightsInitialization;
 import Network.Layers.ILayer;
 
 public class PerceptronLayer implements ILayer {
 
-    private double[] neurons;
-    private double[] bias;
+    private Double[] neurons;
+    private Double[] bias;
     private Matrix weights;
     private Boolean isEndLayer;
 
-    public PerceptronLayer(int size, int nextSize, IWeightsInitialization weightsInitialization) {
-        neurons = new double[size];
-        bias    = new double[nextSize];
+    public PerceptronLayer(Integer size, Integer nextSize, IWeightsInitialization weightsInitialization) {
+        neurons = new Double[size];
+        bias    = new Double[nextSize];
         weights = weightsInitialization.Initialize(new Matrix(nextSize, size));
 
         for (var i = 0; i < nextSize; i++)
@@ -23,35 +24,56 @@ public class PerceptronLayer implements ILayer {
         isEndLayer = false;
     }
 
-    public PerceptronLayer(int size) {
-        neurons = new double[size];
-        bias    = new double[size];
+    public PerceptronLayer(Integer size) {
+        neurons = new Double[size];
+        bias    = new Double[size];
         weights = new Matrix(size,size);
 
         for (var i = 0; i < size; i++)
-            weights.body[i][i] = 1;
+            weights.body[i][i] = 1d;
 
         isEndLayer = true;
     }
 
     @Override
     public Tensor GetNextLayer(Tensor tensor) {
-        return null;
+        neurons = tensor.flatten().toArray(neurons);
+        var nextLayer = new Matrix(neurons).multiply(weights).toVector().plus(new Vector(bias));
+        return nextLayer.toTensor(1, nextLayer.getSize(),1);
     }
 
     @Override
-    public Tensor BackPropagate(Tensor error, double learningRate, Boolean backPropagate) {
-        return null;
+    public Tensor BackPropagate(Tensor error, Double learningRate, Boolean backPropagate) {
+        var previousError = new Vector(error.flatten().toArray(new Double[0]));
+        if (isEndLayer) {
+            return previousError.toTensor(1, previousError.getSize(), 1);
+        }
+
+        var neuronsError = previousError.toMatrix(1, previousError.getSize()).multiply(weights.transpose());
+        if(backPropagate) {
+            for(int i = 0; i<weights.getRows(); i++) {
+                for(int j = 0; j< weights.getColumns(); j++) {
+                    weights.body[i][j] -= neurons[i] * previousError.getBody()[j] * learningRate;
+                }
+            }
+
+            for (int i = 0; i<weights.getRows(); i++) {
+                bias[i] -= previousError.getBody()[i] * learningRate;
+            }
+        }
+        return neuronsError.toVector().toTensor(1, neuronsError.getColumns()*neuronsError.getColumns(), 1);
     }
 
     @Override
     public Tensor GetValues() {
-        return null;
+        return new Vector(neurons).toTensor(1, neurons.length, 1);
     }
 
     @Override
     public String GetData() {
-        return null;
+        var temp = "";
+        temp += weights.toVector().getBody();
+        return temp;
     }
 
     @Override
