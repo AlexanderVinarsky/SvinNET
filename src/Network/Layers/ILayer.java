@@ -3,9 +3,9 @@ package Network.Layers;
 import Math.Objects.Tensor;
 
 public interface ILayer {
-    public Tensor GetNextLayer(Tensor tensor);
-    public Tensor BackPropagate(Tensor error, Double learningRate, Boolean backPropagate);
-    public Tensor GetValues();
-    public String GetData();
-    public String LoadData(String data);
+    public Tensor getNextLayer(Tensor tensor);
+    public Tensor backPropagate(Tensor error, Double learningRate, Boolean backPropagate);
+    public Tensor getValues();
+    public String getData();
+    public String loadData(String data);
 }

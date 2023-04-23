@@ -4,12 +4,12 @@ import java.lang.Math;
 
 public class Sigmoid extends ActivationFunction{
     @Override
-    protected double Activate(Double value) {
+    protected double activate(Double value) {
         return 1 / (1 + Math.exp(-value));
     }
 
     @Override
-    protected Double Derivation(Double value, Double referenceValue) {
-        return value * (Activate(referenceValue) * (1 - Activate(referenceValue)));
+    protected Double derivation(Double value, Double referenceValue) {
+        return value * (activate(referenceValue) * (1 - activate(referenceValue)));
     }
 }

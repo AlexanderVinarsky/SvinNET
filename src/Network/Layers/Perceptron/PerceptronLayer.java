@@ -15,7 +15,7 @@ public class PerceptronLayer implements ILayer {
 
     public PerceptronLayer(Integer size, Integer nextSize, IWeightsInitialization weightsInitialization) {
         neurons = new Double[size];
-        bias    = new Double[nextSize];
+        bias = new Double[nextSize];
         weights = weightsInitialization.Initialize(new Matrix(nextSize, size));
 
         for (var i = 0; i < nextSize; i++)
@@ -26,7 +26,7 @@ public class PerceptronLayer implements ILayer {
 
     public PerceptronLayer(Integer size) {
         neurons = new Double[size];
-        bias    = new Double[size];
+        bias = new Double[size];
         weights = new Matrix(size,size);
 
         for (var i = 0; i < size; i++)
@@ -36,14 +36,14 @@ public class PerceptronLayer implements ILayer {
     }
 
     @Override
-    public Tensor GetNextLayer(Tensor tensor) {
+    public Tensor getNextLayer(Tensor tensor) {
         neurons = tensor.flatten().toArray(neurons);
         var nextLayer = new Matrix(neurons).multiply(weights).toVector().plus(new Vector(bias));
         return nextLayer.toTensor(1, nextLayer.getSize(),1);
     }
 
     @Override
-    public Tensor BackPropagate(Tensor error, Double learningRate, Boolean backPropagate) {
+    public Tensor backPropagate(Tensor error, Double learningRate, Boolean backPropagate) {
         var previousError = new Vector(error.flatten().toArray(new Double[0]));
         if (isEndLayer) {
             return previousError.toTensor(1, previousError.getSize(), 1);
@@ -65,19 +65,19 @@ public class PerceptronLayer implements ILayer {
     }
 
     @Override
-    public Tensor GetValues() {
+    public Tensor getValues() {
         return new Vector(neurons).toTensor(1, neurons.length, 1);
     }
 
     @Override
-    public String GetData() {
+    public String getData() {
         var temp = "";
         temp += weights.toVector().getBody();
         return temp;
     }
 
     @Override
-    public String LoadData(String data) {
+    public String loadData(String data) {
         return null;
     }
 }
