@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8305df66-a7b4-40f9-8e59-9dd065511937" name="Changes" comment="Abstract Activation Function and Sigmoid Activation Function added">
-      <change afterPath="$PROJECT_DIR$/src/Math/Loss_Function/LossFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Math/Loss_Function/MSE.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Network/Network.java" afterDir="false" />
+    <list default="true" id="8305df66-a7b4-40f9-8e59-9dd065511937" name="Changes" comment="MSE, LossFunction, Network update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Math/Scripts/Initialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network/Initialization/HeInitialization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Network/Layers/Activation/ActivationFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network/Layers/Activation/ActivationFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Network/Layers/Activation/Sigmoid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network/Layers/Activation/Sigmoid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Network/Layers/ILayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network/Layers/ILayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Network/Layers/Perceptron/PerceptronLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network/Layers/Perceptron/PerceptronLayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Math/Loss_Function/LossFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Math/Loss_Function/LossFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Math/Loss_Function/MSE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Math/Loss_Function/MSE.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +69,9 @@
       <workItem from="1681845324864" duration="229000" />
       <workItem from="1681901532957" duration="54000" />
       <workItem from="1682008577183" duration="130000" />
-      <workItem from="1682197395716" duration="13009000" />
+      <workItem from="1682197395716" duration="14253000" />
+      <workItem from="1682356789124" duration="3108000" />
+      <workItem from="1682369393225" duration="828000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1681125411546</created>
@@ -106,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681678087342</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="MSE, LossFunction, Network update">
+      <created>1682282589051</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682282589051</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +130,7 @@
     <MESSAGE value="More Math Objects" />
     <MESSAGE value="PerceptronLayer Added" />
     <MESSAGE value="Abstract Activation Function and Sigmoid Activation Function added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Abstract Activation Function and Sigmoid Activation Function added" />
+    <MESSAGE value="MSE, LossFunction, Network update" />
+    <option name="LAST_COMMIT_MESSAGE" value="MSE, LossFunction, Network update" />
   </component>
 </project>

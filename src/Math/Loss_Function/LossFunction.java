@@ -4,7 +4,7 @@ import Math.Objects.Tensor;
 
 public abstract class LossFunction {
     protected static double Loss(double sum, int count) {
-        return 1.0 / count * sum;
+        return (1.0 / count) * sum;
     }
 
     public abstract double GetLoss(Tensor outputTensor, Tensor expectedTensor);
