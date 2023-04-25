@@ -52,6 +52,16 @@ public class Matrix {
         }
     }
 
+    public String GetValues() {
+        var tempValues = "";
+
+        for (var i = 0; i < rows; i++)
+            for (var j = 0; j < columns; j++)
+                tempValues += body[i][j] + " ";
+
+        return tempValues;
+    }
+
     public void random() {
         Random rand = new Random();
         for (int i = 0; i < rows; i++) {

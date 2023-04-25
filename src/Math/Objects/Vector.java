@@ -106,7 +106,7 @@ public class Vector {
     }
 
     public Tensor toTensor(Integer rows, Integer cols, Integer channels) {
-        List<Matrix> matrixList = new ArrayList<>();
+        ArrayList<Matrix> matrixList = new ArrayList<>();
         Tensor tensor = new Tensor(matrixList);
         if (channels*rows*cols > size) {
             return null;

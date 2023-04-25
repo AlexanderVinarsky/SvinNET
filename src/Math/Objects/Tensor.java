@@ -1,10 +1,14 @@
 package Math.Objects;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.stream.Stream;
 
 public class Tensor {
     ArrayList<Matrix> channels;
+
+    public Tensor (Matrix matrix) {
+        this.channels = new ArrayList<Matrix>();
+        this.channels.add(matrix);
+    }
 
     public Tensor(ArrayList<Matrix> channels) {
         this.channels = channels;
