@@ -1,8 +1,10 @@
-package Network.Layers.Activation;
+package Network.Layers.Activation.Functions;
+
+import Network.Layers.Activation.Functions.ActivationFunction;
 
 import java.lang.Math;
 
-public class Sigmoid extends ActivationFunction{
+public class Sigmoid extends ActivationFunction {
     @Override
     protected double activate(Double value) {
         return 1 / (1 + Math.exp(-value));

@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8305df66-a7b4-40f9-8e59-9dd065511937" name="Changes" comment="MSE update">
+    <list default="true" id="8305df66-a7b4-40f9-8e59-9dd065511937" name="Changes" comment="Tensor fix, Network update">
+      <change afterPath="$PROJECT_DIR$/src/Network/Layers/Activation/Functions/ActivationLayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Math/Objects/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Math/Objects/Matrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Math/Objects/Tensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Math/Objects/Tensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Math/Objects/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Math/Objects/Vector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Network/Layers/Activation/ActivationFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network/Layers/Activation/Functions/ActivationFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Network/Layers/Activation/Sigmoid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network/Layers/Activation/Functions/Sigmoid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Network/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network/Network.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +74,8 @@
       <workItem from="1682008577183" duration="130000" />
       <workItem from="1682197395716" duration="14253000" />
       <workItem from="1682356789124" duration="3108000" />
-      <workItem from="1682369393225" duration="6776000" />
+      <workItem from="1682369393225" duration="7426000" />
+      <workItem from="1682531685391" duration="4863000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1681125411546</created>
@@ -117,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682370251685</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Tensor fix, Network update">
+      <created>1682420929301</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682420929301</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,6 +150,7 @@
     <MESSAGE value="Abstract Activation Function and Sigmoid Activation Function added" />
     <MESSAGE value="MSE, LossFunction, Network update" />
     <MESSAGE value="MSE update" />
-    <option name="LAST_COMMIT_MESSAGE" value="MSE update" />
+    <MESSAGE value="Tensor fix, Network update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tensor fix, Network update" />
   </component>
 </project>

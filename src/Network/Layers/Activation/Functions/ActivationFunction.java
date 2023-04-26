@@ -1,4 +1,4 @@
-package Network.Layers.Activation;
+package Network.Layers.Activation.Functions;
 
 import Math.Objects.Matrix;
 import Math.Objects.Tensor;
